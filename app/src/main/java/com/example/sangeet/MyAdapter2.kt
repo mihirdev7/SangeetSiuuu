@@ -16,6 +16,7 @@ import java.io.File
 
 class MyAdapter2 (private val context: Context,private val songs: List<File>) : RecyclerView.Adapter<MyAdapter2.ViewHolder>() {
 
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val View=LayoutInflater.from(context).inflate(R.layout.activity_design,parent,false)
         return ViewHolder(View)
@@ -29,9 +30,13 @@ class MyAdapter2 (private val context: Context,private val songs: List<File>) : 
         val Song=songs[position]
         holder.textt.text=Song.name
 
+
+        holder.sekbar.visibility=View.GONE
+
+
         holder.strt.setOnClickListener {
              var mediaPlayer :MediaPlayer= MediaPlayer.create(context,Song.toUri())
-            mediaPlayer.start()
+             mediaPlayer.start()
 
         }
     }
