@@ -8,10 +8,12 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView2"
-        android:layout_margin="3dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="3dp"
         app:cardCornerRadius="5dp"
+        app:cardElevation="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,8 +21,8 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:background="#C6DE92"
             android:layout_height="wrap_content"
+            android:background="@color/white"
             android:orientation="horizontal">
 
             <ImageView
@@ -39,6 +41,7 @@
                 android:layout_marginBottom="40dp"
                 android:text="yoyooyooy"
                 android:textSize="15dp"
+                android:textColor="@color/black"
                 app:layout_constraintBottom_toBottomOf="@+id/img"
                 app:layout_constraintStart_toEndOf="@+id/img"
                 app:layout_constraintTop_toTopOf="@+id/img"
@@ -60,6 +63,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
                 android:layout_marginTop="20dp"
+                android:background="@color/white"
                 android:layout_marginBottom="10dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
