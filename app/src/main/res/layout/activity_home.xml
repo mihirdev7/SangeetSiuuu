@@ -12,7 +12,7 @@
         android:layout_height="80dp"
         android:layout_marginStart="25dp"
         android:layout_marginBottom="32dp"
-        android:text="API Fetch Music"
+        android:text="Fetch Music"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -24,7 +24,7 @@
         android:textSize="20sp"
         android:layout_marginEnd="25dp"
         android:layout_marginBottom="32dp"
-        android:text="Storge Music"
+        android:text="Storage Music"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

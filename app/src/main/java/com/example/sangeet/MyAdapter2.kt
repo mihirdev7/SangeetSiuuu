@@ -15,7 +15,8 @@ import java.io.File
 
 
 class MyAdapter2 (private val context: Context,private val songs: List<File>) : RecyclerView.Adapter<MyAdapter2.ViewHolder>() {
-
+    private var mediaPlayer: MediaPlayer? = null
+    private var lastplayed =-1
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val View=LayoutInflater.from(context).inflate(R.layout.activity_design,parent,false)
@@ -29,14 +30,28 @@ class MyAdapter2 (private val context: Context,private val songs: List<File>) : 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val Song=songs[position]
         holder.textt.text=Song.name
-
-
+        holder.strt.setBackgroundResource(R.drawable.start_icon)
         holder.sekbar.visibility=View.GONE
 
-
         holder.strt.setOnClickListener {
-             var mediaPlayer :MediaPlayer= MediaPlayer.create(context,Song.toUri())
-             mediaPlayer.start()
+            if(lastplayed==position){
+                if(mediaPlayer?.isPlaying==true){
+                    mediaPlayer?.pause()
+                    holder.strt.setBackgroundResource(R.drawable.stop_icon)
+                }else{
+                    mediaPlayer?.start()
+                    holder.strt.setBackgroundResource(R.drawable.start_icon)
+
+                }
+            }else {
+                mediaPlayer?.release()
+                mediaPlayer = MediaPlayer()
+                mediaPlayer?.setDataSource(context, Song.toUri())
+                mediaPlayer?.prepare()
+                mediaPlayer?.start()
+                holder.strt.setBackgroundResource(R.drawable.start_icon)
+                lastplayed = position
+            }
 
         }
     }

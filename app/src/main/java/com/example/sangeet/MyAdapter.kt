@@ -32,6 +32,7 @@ class MyAdapter(val context:Activity,val dataList:List<Data>)
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentData=dataList[position]
+        holder.strt.setBackgroundResource(R.drawable.start_icon)
         holder.textt.text=currentData.title
         holder.sekbar.max=currentData.duration
         holder.sekbar.tag=position
@@ -42,8 +43,11 @@ class MyAdapter(val context:Activity,val dataList:List<Data>)
             if(lastplayed==position){
                 if(mediaPlayer?.isPlaying==true){
                     mediaPlayer?.pause()
+                    holder.strt.setBackgroundResource(R.drawable.stop_icon)
                 }else{
                     mediaPlayer?.start()
+                    holder.strt.setBackgroundResource(R.drawable.start_icon)
+
                 }
             }else{
                 mediaPlayer?.release()
@@ -51,6 +55,7 @@ class MyAdapter(val context:Activity,val dataList:List<Data>)
                 mediaPlayer?.setDataSource(context,currentData.preview.toUri())
                 mediaPlayer?.prepare()
                 mediaPlayer?.start()
+                holder.strt.setBackgroundResource(R.drawable.start_icon)
                 lastplayed=position
                 lastskbar?.visibility=View.GONE
                 holder.sekbar.visibility=View.VISIBLE
