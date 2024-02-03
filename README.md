@@ -9,9 +9,7 @@ A music player app that fetches music data from a Retrofit API and also fetches 
 
 ## Technologies Used
 
-- **API Integration**: Fetch music data from [API Name].
+- **API Integration**: Used Retrofit library to Fetch music data from Deezer Api.
 - **Internal Storage Access**: Access music stored in the device's internal storage.
-- **Audio Playback**: Utilize [Audio Library or Framework] for seamless music playback.
-- **User Interface**: Designed using [UI Library or Framework].
 
-![LoginActivity](https://github.com/mihirdev7/Sangeet_App/assets/143248297/5b003c21-c894-4d16-ab38-ed9d2c01996e)
+![Activity](https://github.com/mihirdev7/Sangeet_App/assets/143248297/64b3c695-954a-4a6e-9b8a-139f5babb6b4)
