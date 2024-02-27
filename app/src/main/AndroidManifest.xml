@@ -25,10 +25,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".ApiMusicFetchActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity2"
+            android:name=".StorageMusicFetchActivity"
             android:exported="false"/>
 
     </application>

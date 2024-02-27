@@ -1,4 +1,4 @@
-package com.example.sangeet
+package com.example.sangeet.Models
 
 data class Data(
     val album: Album,

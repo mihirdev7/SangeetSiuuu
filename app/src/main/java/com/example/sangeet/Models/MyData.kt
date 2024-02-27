@@ -1,4 +1,6 @@
-package com.example.sangeet
+package com.example.sangeet.Models
+
+import com.example.sangeet.Models.Data
 
 data class MyData(
     val `data`: List<Data>,

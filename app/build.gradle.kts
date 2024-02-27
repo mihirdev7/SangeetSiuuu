@@ -50,6 +50,10 @@ dependencies {
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     //picasso
     implementation("com.squareup.picasso:picasso:2.8")
+    //ExoPlayer
+    implementation("androidx.media3:media3-exoplayer:1.2.1")
+    implementation("androidx.media3:media3-exoplayer-dash:1.2.1")
+    implementation("androidx.media3:media3-ui:1.2.1")
 
 
 

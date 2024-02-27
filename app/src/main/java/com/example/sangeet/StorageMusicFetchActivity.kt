@@ -1,24 +1,22 @@
 package com.example.sangeet
 
-import android.content.Context
 import android.Manifest
 import android.content.pm.PackageManager
-import android.health.connect.datatypes.units.Length
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Environment
-import android.widget.Adapter
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.sangeet.Adapters.StorageMusicAdapter
 import java.io.File
 
-class MainActivity2 : AppCompatActivity() {
+class StorageMusicFetchActivity : AppCompatActivity() {
     private val PERMISSION_REQUEST_CODE=123
     private lateinit var recyycler : RecyclerView
-    private lateinit var adapter : MyAdapter2
+    private lateinit var adapter : StorageMusicAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,7 +54,7 @@ class MainActivity2 : AppCompatActivity() {
     private  fun LoadSongs(){
         val musicDirectory=File(Environment.getExternalStorageDirectory().toString())
         val songs=getALLMP3Files(musicDirectory)
-        adapter= MyAdapter2(this,songs)
+        adapter= StorageMusicAdapter(this,songs)
         recyycler.adapter=adapter
     }
     private fun getALLMP3Files(direstory:File): List<File> {
